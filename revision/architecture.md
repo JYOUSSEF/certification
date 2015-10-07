@@ -23,7 +23,7 @@ Que faut-il faire pour mettre en place l'héritage d'un bundle dans un autre bun
 > Créer un fichier avec le même nom, dans notre bundle
 
 Où doit-on placer le fichier LICENSE ?
-> Resources/meta/LICENSE
+> ./LICENSE
 
 Bundle distribué, que doit-on faire ?
 > LICENSE
@@ -40,12 +40,12 @@ Parmi ces formats, lequel est le plus performant ?
 
 ## Request handling
 Quels sont les events dispatchés ?
-> KERNEL REQUEST
-> KERNEL CONTROLLER
-> KERNEL VIEW (si kernel controller renvoie une response, pas appelé)
-> KERNEL EXCEPTION
-> KERNEL TERMINATE
-http://symfony.com/doc/current/components/http_kernel/introduction.html#component-http-kernel-event-table
+> KERNEL REQUEST  
+> KERNEL CONTROLLER  
+> KERNEL VIEW (si kernel controller renvoie une response, pas appelé)  
+> KERNEL EXCEPTION  
+> KERNEL TERMINATE  
+http://symfony.com/doc/current/components/http_kernel/introduction.html#component-http-kernel-event-table  
 
 ==============================
 
