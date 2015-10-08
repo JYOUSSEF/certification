@@ -13,7 +13,8 @@ Quels sont les fichiers obligatoires pour la création d'un bundle ?
 
 Quels sous-répertoires met-on dans Resources ?
 > config
-> public 
+> doc
+> public
 > translations
 > views
 
