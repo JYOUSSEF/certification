@@ -50,5 +50,12 @@ Comment overrider une page d'erreur 404 ?
 > Il faut créer un fichier template ici : app/Resources/TwigBundle/views/Exception/ rror404.html.twig
 
 ## The views
+Dans un template Twig, comment affiche-t-on le rendu d'une méthode d'un controller ?
+> {{ render(controller('BundleName:ControllerName:actionName')) }}
 
-## The resources
+Quelle est la différence entre la fonction path et url dans Twig ?
+> *url* génère des URLs absolues
+
+## The resources (asset management)
+Quel filtre permet de régler le problème des chemins relatifs vers les images en CSS ?
+> cssrewrite
