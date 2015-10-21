@@ -49,6 +49,9 @@ Est-ce qu'on peut définir un template static sans controller ?
 Comment overrider une page d'erreur 404 ?
 > Il faut créer un fichier template ici : app/Resources/TwigBundle/views/Exception/ rror404.html.twig
 
+Comment récupérer le chemin vers un Bundle dans un controller ?
+> $this->get('kernel')->getBundle('AppBundle')->getPath();
+
 ## The views
 Dans un template Twig, comment affiche-t-on le rendu d'une méthode d'un controller ?
 > {{ render(controller('BundleName:ControllerName:actionName')) }}
@@ -59,3 +62,17 @@ Quelle est la différence entre la fonction path et url dans Twig ?
 ## The resources (asset management)
 Quel filtre permet de régler le problème des chemins relatifs vers les images en CSS ?
 > cssrewrite
+
+==============================
+
+1. 3 & 5
+2. 3
+3. 2
+4. 4
+5. ? => 1
+6. 3
+7. 2
+8. 4 => 3
+9. 2
+10. 3
+11. 1 => 4
