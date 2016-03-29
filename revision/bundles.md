@@ -6,17 +6,17 @@ Quelles PSR le namespace d'un bundle doit-il suivre ?
 
 ## Code organization
 Quels sont les fichiers obligatoires pour la création d'un bundle ?
-> La classe du Bundle (qui étend Symfony\Component\HttpKernel\Bundle\Bundle)
-> README.md (ou README.rst)
-> LICENSE
-> Resources/doc/index.rst
+> La classe du Bundle (qui étend Symfony\Component\HttpKernel\Bundle\Bundle)  
+> README.md (ou README.rst)  
+> LICENSE  
+> Resources/doc/index.rst  
 
 Quels sous-répertoires met-on dans Resources ?
-> config
-> doc
-> public
-> translations
-> views
+> config  
+> doc  
+> public  
+> translations  
+> views  
 
 ## The controllers
 Basiquement, que fait un Controller ?
@@ -47,7 +47,7 @@ Est-ce qu'on peut définir un template static sans controller ?
 ```
 
 Comment overrider une page d'erreur 404 ?
-> Il faut créer un fichier template ici : app/Resources/TwigBundle/views/Exception/ rror404.html.twig
+> Il faut créer un fichier template ici : app/Resources/TwigBundle/views/Exception/error404.html.twig
 
 Comment récupérer le chemin vers un Bundle dans un controller ?
 > $this->get('kernel')->getBundle('AppBundle')->getPath();
