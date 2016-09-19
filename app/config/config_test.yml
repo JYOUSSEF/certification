@@ -6,7 +6,7 @@ framework:
     session:
         storage_id: session.storage.mock_file
     profiler:
-        collect: false
+        enabled: false
 
 web_profiler:
     toolbar: false
@@ -14,3 +14,10 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine:
+    dbal:
+        dbname:   %database_name%_test
+
+parameters:
+     security.context_listener.class: SensioLabs\JobBoardBundle\TestsFunctional\Security\Http\Firewall\ContextListener
