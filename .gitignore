@@ -12,3 +12,6 @@
 /web/bundles/
 /var/bootstrap.php.cache
 /var/SymfonyRequirements.php
+/bin/*
+!bin/console
+!bin/symfony_requirements
