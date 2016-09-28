@@ -2,13 +2,27 @@
 
 ##Authentication
 
+
 ##Authorization
 
 ##Configuration
+Lors du login, quel paramètre permet d'utiliser un referer ?
+> use_referer: true
+
+Valeur par défaut ?
+> false
 
 ##Providers
 
 ##Firewalls
+Comment peut-on activer un firewall uniquement pour certaines méthodes HTTP ?
+>
+```yaml
+security:
+    firewalls:
+        secured_area:
+            methods: [GET, POST]
+```
 
 ##Users
 
@@ -17,6 +31,10 @@
 ##Roles
 
 ##Access Control Rules
+
+##Authentication with Guard
+
+##Voters and Voting Strategy
 
 
 # Questions
