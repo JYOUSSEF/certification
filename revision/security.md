@@ -12,6 +12,9 @@ Lors du login, quel paramètre permet d'utiliser un referer ?
 Valeur par défaut ?
 > false
 
+Est-ce qu'on peut définir un réferer par défaut ?
+> Non
+
 ##Providers
 
 ##Firewalls
@@ -25,8 +28,16 @@ security:
 ```
 
 ##Users
+Quelles sont les cinq méthodes de `UserInterface` à implémenter ?
+> getRoles
+> eraseCredentials
+> getPassword
+> getSalt
+> getUsername
 
 ##Passwords encoders
+Quelle commande Symfony permet d'encoder à la volée un mot de passe ?
+> bin/console security:encode-password
 
 ##Roles
 
@@ -35,7 +46,23 @@ security:
 ##Authentication with Guard
 
 ##Voters and Voting Strategy
-
+Quelle est la signature de la méthode `vote` de l'interface `VoterInterface` ?
+>
+```php
+    /**
+     * Returns the vote for the given parameters.
+     *
+     * This method must return one of the following constants:
+     * ACCESS_GRANTED, ACCESS_DENIED, or ACCESS_ABSTAIN.
+     *
+     * @param TokenInterface $token      A TokenInterface instance
+     * @param mixed          $subject    The subject to secure
+     * @param array          $attributes An array of attributes associated with the method being invoked
+     *
+     * @return int either ACCESS_GRANTED, ACCESS_ABSTAIN, or ACCESS_DENIED
+     */
+    public function vote(TokenInterface $token, $subject, array $attributes);
+```
 
 # Questions
 
