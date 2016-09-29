@@ -1,24 +1,37 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
 security:
-    role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_CONNECT_USER]
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        my_in_memory_provider:
+        in_memory:
             memory:
                 users:
                     foo:
-                        password: foo
-                        roles:    ROLE_ADMIN
+                        password: $2y$12$HcEBHUMPmn89Zej1jPNXOexJBkJEq3DhHsTXfbkR0oYCw/yCqOA1S
+                        roles: 'ROLE_ADMIN'
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
     firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        secured_area:
-            pattern:    ^/
-            logout:          ~
-            anonymous:       true
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+        admin_area:
+            http_basic: ~
 
     access_control:
-        - { path: ^/manage, roles: ROLE_CONNECT_USER }
+        - { path: '/admin', roles: ROLE_ADMIN }
