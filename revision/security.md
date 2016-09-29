@@ -2,7 +2,6 @@
 
 ##Authentication
 
-
 ##Authorization
 
 ##Configuration
@@ -21,10 +20,10 @@ Est-ce qu'on peut définir un réferer par défaut ?
 Comment peut-on activer un firewall uniquement pour certaines méthodes HTTP ?
 >
 ```yaml
-security:
-    firewalls:
-        secured_area:
-            methods: [GET, POST]
+    security:
+        firewalls:
+            secured_area:
+                methods: [GET, POST]
 ```
 
 ##Users
@@ -63,23 +62,43 @@ Quelle est la signature de la méthode `vote` de l'interface `VoterInterface` ?
      */
     public function vote(TokenInterface $token, $subject, array $attributes);
 ```
+> `ACCESS_GRANTED` 1  
+> `ACCESS_ABSTAIN` 0  
+> `ACCESS_DENIED` -1  
 
-# Questions
+Stratégies:
+> affirmative (par défaut, au moins 1)  
+> consensus (majorité)  
+> unanimous (tous)  
 
-1: 2
-2: 3
-3: 2
-4: 3 & 4
-5: 3 -> 1
-6: 2 & 4
-7: ? -> 4
-8: 4
-9: 1 & 3
-10: ? -> 2 (hash_algos())
-11: 1
-12: 1 -> 2
-13: 1
-14: 4 -> 2
-15: 1 -> 4
-16: 2
-17: ? -> 1 & 3
+## Questions de session de révision
+
+Quels sont les Events liés à l'authentification ? 
+> INTERACTIVE_LOGIN : on vérifie à chaque fois les credentials  
+> SWITCH_USER  
+> AUTHENTICATION_SUCCESS  
+> AUTHENTICATION_FAILURE  
+
+Que se passe-t-il quand l'option `pattern` n'est pas présente ?
+> Toutes les routes sont catchées
+
+Comment prendre l'idendité d'un user ?
+> Rôle `ALLOWED_TO_SWITCH`
+```yaml
+    switch_user:
+        provider:  ~
+        parameter: _switch_user
+        role:      ROLE_ALLOWED_TO_SWITCH
+```
+
+To switch back to the original user, use the special `_exit` username
+
+Roles hierarchy : c'est un service
+```yaml
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+```
+
+Par défaut, il n'y a pas d'encoder
+> No encoder has been configured for account Symfony\Component\Security\Core\User\User".
