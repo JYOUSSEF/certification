@@ -82,7 +82,7 @@ Quels sont les Events liés à l'authentification ?
 Que se passe-t-il quand l'option `pattern` n'est pas présente ?
 > Toutes les routes sont catchées
 
-Comment prendre l'idendité d'un user ?
+Comment prendre l'identité d'un user ?
 > Rôle `ALLOWED_TO_SWITCH`
 ```yaml
     switch_user:
