@@ -5,13 +5,13 @@
 ##Authorization
 
 ##Configuration
-Lors du login, quel paramètre permet d'utiliser un referer ?
+Dans la configuration d'un firewall, quel paramètre permet d'utiliser un referer lors du login ?
 > use_referer: true
 
 Valeur par défaut ?
 > false
 
-Est-ce qu'on peut définir un réferer par défaut ?
+Est-ce qu'on peut définir un referer par défaut ?
 > Non
 
 ##Providers
