@@ -18,10 +18,18 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/post/{tag}/{slug}", name="")
      */
-    public function adminAction()
+    public function viewPostAction($slug, $tag)
     {
-        return new Response('<html><body>admin</body></html>');
+        return new Response("<html><body>$tag / $slug</body></html>");
+    }
+
+    /**
+     * @Route("/blog/{page}", name="blog_list", requirements={"page": "\d+"}, defaults={"page": 1})
+     */
+    public function blogAction($page)
+    {
+        return new Response("<html><body>Blog page : $page</body></html>");
     }
 }

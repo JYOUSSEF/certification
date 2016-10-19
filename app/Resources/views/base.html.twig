@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certification</title>
+</head>
+<body>
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a href="{{ path('logout') }}">Logout</a>
+{% endif %}
+
+{% block body %}
+{% endblock %}
+</body>
+</html>
