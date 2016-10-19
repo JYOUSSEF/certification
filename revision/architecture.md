@@ -30,8 +30,8 @@ Bundle distribué, que doit-on faire ?
 > Resources/doc/index.rst
 
 ## Configuration
-Quels sont les formats de configuration supportés par Symfony par défaut ?  
-> xml, yml, php, ini et annotation  
+Quels sont les formats de configuration supportés par Symfony par défaut ?
+> xml, yml, php, ini et annotation
 
 Parmi ces formats, lequel est le plus performant ?
 >aucun, ils sont tous compilés en PHP avant l'exécution de l'application
@@ -40,12 +40,23 @@ Parmi ces formats, lequel est le plus performant ?
 
 ## Request handling
 Quels sont les events dispatchés ?
-> KERNEL REQUEST  
-> KERNEL CONTROLLER  
-> KERNEL VIEW (si kernel controller renvoie une response, pas appelé)  
-> KERNEL EXCEPTION  
-> KERNEL TERMINATE  
-http://symfony.com/doc/current/components/http_kernel/introduction.html#component-http-kernel-event-table  
+> KERNEL REQUEST
+> KERNEL CONTROLLER
+> KERNEL VIEW (si kernel controller renvoie une response, pas appelé)
+> KERNEL EXCEPTION
+> KERNEL TERMINATE
+http://symfony.com/doc/current/components/http_kernel/introduction.html#component-http-kernel-event-table
+
+## Propagation et écoute d'événements du noyau
+Kernel Events
+    kernel.request (GetResponseEvent)
+    kernel.controller (FilterControllerEvent)
+    kernel.view (GetResponseForControllerResultEvent)
+    kernel.response (FilterResponseEvent)
+    kernel.finish_request (FinishRequestEvent)
+    kernel.terminate (PostResponseEvent)
+    kernel.exception (GetResponseForExceptionEvent)
+http://symfony.com/doc/current/reference/events.html#kernel-request
 
 ==============================
 

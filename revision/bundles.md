@@ -6,17 +6,17 @@ Quelles PSR le namespace d'un bundle doit-il suivre ?
 
 ## Code organization
 Quels sont les fichiers obligatoires pour la création d'un bundle ?
-> La classe du Bundle (qui étend Symfony\Component\HttpKernel\Bundle\Bundle)  
-> README.md (ou README.rst)  
-> LICENSE  
-> Resources/doc/index.rst  
+> La classe du Bundle (qui étend Symfony\Component\HttpKernel\Bundle\Bundle)
+> README.md (ou README.rst)
+> LICENSE
+> Resources/doc/index.rst
 
 Quels sous-répertoires met-on dans Resources ?
-> config  
-> doc  
-> public  
-> translations  
-> views  
+> config
+> doc
+> public
+> translations
+> views
 
 ## The controllers
 Basiquement, que fait un Controller ?
@@ -38,7 +38,7 @@ Depuis quel paramètre récupère-t-on les messages flash dans un template ?
 > app.session.flashbag.get('type')
 
 Est-ce qu'on peut définir un template static sans controller ?
-> Oui, dans la configuration de la route  
+> Oui, dans la configuration de la route
 ```yml
     route_name:
         defaults:
