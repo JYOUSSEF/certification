@@ -6,7 +6,7 @@ Comment activer le cache HTTP ?
 $kernel = new AppCache($kernel);
 ```
 
-Quelle méthode de HttpCache permet de valider/debugger la stratégie de cahce ?
+Quelle méthode de HttpCache permet de valider/debugger la stratégie de cache ?
 > getLog()
 ```php
 error_log($kernel->getLog());
