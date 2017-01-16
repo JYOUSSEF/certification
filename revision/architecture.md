@@ -89,12 +89,12 @@ Où doit-on placer le fichier LICENSE ?
 > ./LICENSE
 
 Bundle distribué, que doit-on faire ?
-- class AcmeDemoBundle;php
+- class AcmeDemoBundle.php
 - README.md
 - LICENSE
 - Resources/doc/index.rst
 
-Quelles sont les 5 annotations définies par SensioFrameworkExtraBundle ?
+Quelles sont les 6 annotations définies par SensioFrameworkExtraBundle ?
 - @Route and @Method
 - @ParamConverter
 - @Template
@@ -172,7 +172,7 @@ Quelle est la durée de maintenance des version mineurs ?
 > 8 mois
 
 Quelle est la durée d'un feature freeze ?
-> 2 mois        
+> 2 mois
 
 Backward compatibility promise
 ----------
