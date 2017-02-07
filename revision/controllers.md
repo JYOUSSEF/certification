@@ -5,12 +5,12 @@
 >
 
 ## The base Controller class
-Quel est la principale utilité de la classe Controller de base ?
+Quel est la principale utilitée de la classe Controller de base ?
 > Fournir des méthodes de raccourci pour les classes enfants (des helpers) et donne accès au `container`.
 
 Quelle est la différence entre `render()` et `renderView()` ?
 > `render()` => retourne un object `Response`  
-> `renderView()` => retourn une chaîne de caractères  
+> `renderView()` => retourne une chaîne de caractères  
 
 ## The request
 
@@ -19,10 +19,10 @@ Quelle est la différence entre `render()` et `renderView()` ?
 ## The response
 
 Liste des Response possibles ?
+> Response  
 > BinaryFileResponse  
 > JsonResponse  
 > RedirectResponse  
-> Response  
 > StreamedResponse  
 
 Signature d'une Response ?  
@@ -50,7 +50,8 @@ Que fait `redirectToRoute()` en interne ?
 
 ## Generate 404 pages
 Comment générer une erreur 404 depuis un contrôleur qui étend le base contrôleur ?
-> `throw $this->createNotFoundException(string message)`. Qui revient au même que de lancer une `NotFoundHttpException`.
+> `throw $this->createNotFoundException(string message)`. 
+> Qui revient au même que de lancer une `NotFoundHttpException`.
 
 Comment customiser la gestion des erreurs ?
 > overrider le template par défaut pour les erreurs (`app/Resources/TwigBundle/views/Exception/`)  
