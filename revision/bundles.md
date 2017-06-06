@@ -63,6 +63,10 @@ Quelle est la différence entre la fonction path et url dans Twig ?
 Quel filtre permet de régler le problème des chemins relatifs vers les images en CSS ?
 > cssrewrite
 
+## Event dispatcher and kernel events
+
+## Semantic configuration and compiler passes
+
 ==============================
 
 1. 3 & 5
