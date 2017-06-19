@@ -8,13 +8,22 @@
 Quel est la principale utilité de la classe Controller de base ?
 > Fournir des méthodes de raccourci pour les classes enfants (des helpers) et donne accès au `container`.
 
+Quel est le namespace du contrôleur de base ?
+> Symfony\Bundle\FrameworkBundle\Controller
+
+Quelle interface implémente-t-il ?
+> ContainerAwareInterface (quelle méthode ? setContainer(ContainerInterface $container))
+
+Par quel moyen l'implémente-t-il ?
+> Avec un trait (ContainerAwareTrait)
+
 Quelle est la différence entre `render()` et `renderView()` ?
 > `render()` => retourne un object `Response`  
 > `renderView()` => retourne une chaîne de caractères  
 
 ## The request
-
->
+Quel est le namespace d'une `Request`?
+> `Symfony\Component\HttpFoundation`
 
 ## The response
 
@@ -29,20 +38,28 @@ Signature d'une Response ?
 > $content = '', $status = 200, $headers = array()
 
 ## The cookies
+Quel est le namespace d'un `Cookie`?
+> `Symfony\Component\HttpFoundation`
 
->
+Quel est le premier et seul argument obligatoire pour contruire un `Cookie`?
+> son `$name`
 
 ## The session
 Quelle méthode raccourcie permet de récupérer la `Session` ?
 > `$request->getSession()`
 
 ## The flash messages
-Quelle méthode permet d'afficher un message depuis le FlashBag tout en le laissant en sessions ?
-> `peek(string $type, array $default = array())`
+Quelle méthode permet d'afficher un message depuis le FlashBag tout en le laissant en session ?
+> `peek(string $type, array $default = array())` (par défaut, `get()` unset le flash)
 
 ## HTTP redirects
 
->
+Quelles sont les deux méthodes du contrôleur de base pour créer une redirection ?
+> redirectToRoute($route, array $parameters = array(), $status = 302)  
+> redirect($url, $status = 302)
+
+Concrètement, que fait `redirect()` ?
+> Elle crée une `new RedirectResponse($url, $status)`.
 
 ## Internal redirects
 Que fait `redirectToRoute()` en interne ?
@@ -62,18 +79,24 @@ Comment overrider le Default ExceptionController ?
 ```yaml
 # app/config/config.yml
 twig:
-    exception_controller:  AppBundle:Exception:showException
+    exception_controller: AppBundle:Exception:showException
 ```
-
 > "Instead of creating a new exception controller from scratch you can, of course, also extend the default ExceptionController. In that case, you might want to override one or both of the `showAction()` and `findTemplate()` methods. The latter one locates the template to be used."
 
 ## File upload
+Quelle type d'objet peut-on instancier pour gérer l'upload de fichier ?
+> `Symfony\Component\HttpFoundation\File\UploadedFile`
 
->
+Quelle méthode de `UploadedFile` permet de copier un fichier sur le système de fichier ?
+> `move($directory, $name = null)` (destination folder, new filename)
 
 ## Built-in internal controllers
-
->
+Quels sont-ils ?
+> ExceptionController
+> TemplateController
+> RedirectController
+> RouterController
+> ProfilerController
 
 ==============================
 
