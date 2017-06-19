@@ -1,7 +1,7 @@
 # Standardization
 
 ## Naming conventions
-Quelle convention de nommage doit-on utiliser pour nommer les variables, les functions et nom de méthode,les arguments ?  
+Quelle convention de nommage doit-on utiliser pour nommer les variables, les functions et nom de méthode, les arguments ?  
 > camelCase
 
 ## Coding standards
@@ -15,7 +15,7 @@ Quelles PSR Symfony suit ?
 Comment installer un bundle tierce ?
 > Ajouter la dépendance dans composer.json  
 > Activer le bundle dans AppKernel (méthode registerBundles)  
-> Configurer le bundle (Read the doc)  
+> Configurer le bundle (Read the doc) (optionnal)  
 
 Quels fichiers sont obligatoires pour créer un bundle tierce ?
 > xxxBundle.php  
@@ -48,7 +48,7 @@ Quelle est la prochaine LTS de la v3 ?
 > 3.4 (qui sortira en même temps que la 4.0)
 
 Quelle est la durée du support des LTS ?
-> 36 mois (2 ans)
+> 36 mois (3 ans)
 
 =========
 
