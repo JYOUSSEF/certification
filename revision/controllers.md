@@ -5,7 +5,7 @@
 >
 
 ## The base Controller class
-Quel est la principale utilitée de la classe Controller de base ?
+Quel est la principale utilité de la classe Controller de base ?
 > Fournir des méthodes de raccourci pour les classes enfants (des helpers) et donne accès au `container`.
 
 Quelle est la différence entre `render()` et `renderView()` ?
