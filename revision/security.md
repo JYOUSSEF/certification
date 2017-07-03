@@ -7,6 +7,9 @@ Quelle interface faut-il implémenter pour créer un custom Password Encoder ?
 > implements `public function encodePassword($raw, $salt)`
 > implements `public function isPasswordValid($encoded, $raw, $salt)`
 
+Quel tag doit-on utiliser pour activer la l'authentification par`remember me` ?
+> `security.remember_me_aware`
+
 ##Authorization
 
 ##Configuration
