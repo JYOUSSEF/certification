@@ -97,9 +97,14 @@ Les traits servent à pallier au manque d'héritage multiple de PHP.
 
 
 # Questions
+
+*** Jours 1 ***
+
+### PHP 5.3 to 5.6 API
 À quelle version `goto` a été ajouté ?
 > 5.3.0
 
+### POO
 Comment peut-on créer une nouvelle instance de la classe en utilisant des arguments fournis avec la Reflection ?
 ```php
 $myClass = (new ReflectionClass(MyClass::class))->newInstance('my arg');  
@@ -121,6 +126,7 @@ foreach ($array as list($a, $b)) {
 }
 ```
 
+### Namespace
 Est-ce qu'on peut imbriquer des namespaces ?
 > Non
 ```php
@@ -131,7 +137,7 @@ namespace mes\trucs {
     }
 }
 ```
-
+### Closure
 Les fonctions anonymes sont disponibles depuis quelle version ?
 > 5.3
 
@@ -144,6 +150,9 @@ $recursive = function () use (&$recursive){
 };
 ```
 
+ *** Jour 2 ***
+
+### Exceptions
 Quelles sont les exceptions prédéfinies ?
 > Exception  
 > ErrorException 
@@ -159,3 +168,52 @@ try {} catch (Exception $e) {
     throw new BadFunctionCallException($message, $code, $exceptionPrécédente);
 }
 ```
+
+### Traits
+Depuis quelle version de PHP les traits sont-ils dispo ?
+> 5.4.0
+
+Qui a la priorité entre un méthode d'une classe héritée et celle d'un trait ?
+> Celle du trait
+
+Qui a la priorité entre un méthode d'une classe de base et celle d'un trait ?
+> Celle de la classe de base
+
+Quel est le nom de l'opérateur utilisé pour résoudre des conflits de trait ?
+> insteadof
+```php
+<?php
+class Talker {
+    use A, B {
+        B::smallTalk insteadof A;
+        A::bigTalk insteadof B;
+    }
+}
+```
+Est-ce qu'un trait peut importer un autre trait ?
+> Oui
+
+Est-ce qu'on peut définir des méthodes abstraites dans des traits ?
+> Oui, pour imposer des contraintes aux classes sous-jacentes
+
+Est-ce qu'une classe peut définir une proriété ayant le même qu'une propriété définie dans un trait importé ?
+> Non, il y aura une erreur E_STRICT (si définition compatible) ou fatale
+
+Comment changer la visibilité d'un méthode importée d'un trait ?
+> avec `as`
+```php
+<?php
+use HelloWorld { sayHello as protected; }
+```
+### PHP Extensions
+Quelles sont les 4 fonctions de l'extension JSON ?
+- json_decode
+- json_encode
+- json_last_error (retourn la dernière erreur survenue, sous forme de constante)
+- json_last_error_message (retourne le message de la dernière erreur survenue, "No Error" si pas d'erreur !!!)
+
+### SPL
+Peut-on implémenter l'interface `Traversable` ?
+> Non, car c'est une interface du moteur interne de PHP. Il faut utiliser à la place `IteratorAggregate` ou `Iterator` qui étendent `Traversable`.
+
+### Web security
