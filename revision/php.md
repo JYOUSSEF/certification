@@ -155,11 +155,10 @@ $recursive = function () use (&$recursive){
 ### Exceptions
 Quelles sont les exceptions prédéfinies ?
 > Exception  
-> ErrorException 
+> ErrorException  
 
 À quoi sert `ErrorException` ?
 > Elle été prévue pour être utilisée avec `set_error_handler()` et donc définir un gestionnaire d'exception custom
-
 
 Est-ce qu'on peut imbriquer des exceptions ?
 > Oui, depuis 5.3 :
@@ -168,6 +167,9 @@ try {} catch (Exception $e) {
     throw new BadFunctionCallException($message, $code, $exceptionPrécédente);
 }
 ```
+Afficher de jolies exceptions
+$a = new \Exception();
+echo $a->getTraceAsString();
 
 ### Traits
 Depuis quelle version de PHP les traits sont-ils dispo ?
@@ -205,11 +207,13 @@ Comment changer la visibilité d'un méthode importée d'un trait ?
 <?php
 use HelloWorld { sayHello as protected; }
 ```
+
+
 ### PHP Extensions
 Quelles sont les 4 fonctions de l'extension JSON ?
 - json_decode
 - json_encode
-- json_last_error (retourn la dernière erreur survenue, sous forme de constante)
+- json_last_error (retourne la dernière erreur survenue, sous forme de constante)
 - json_last_error_message (retourne le message de la dernière erreur survenue, "No Error" si pas d'erreur !!!)
 
 ### SPL
@@ -217,3 +221,5 @@ Peut-on implémenter l'interface `Traversable` ?
 > Non, car c'est une interface du moteur interne de PHP. Il faut utiliser à la place `IteratorAggregate` ou `Iterator` qui étendent `Traversable`.
 
 ### Web security
+Qu'est-ce qu'une faille include ?
+> Quand tu include un variable
