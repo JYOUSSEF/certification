@@ -22,8 +22,8 @@
 ##  Questions
 
 ### Interactions Client / Server
-Quel header pour savoir si une resource a été modifiée ?
-> `If-Not-Modified`
+Quel header est utilisé pour savoir si une resource a été modifiée ?
+> `If-Modified-Since`
 
 ### Codes de statut
 Quelle classe contient une lise de constantes des codes de status ?
@@ -40,7 +40,7 @@ Quels sont les codes de status pour les redirection ?
 
 ### Requête HTTP
 Première ligne d'un requête HTTP ?
-> GET URI Protocol
+> Méthode + URI + Version du protocole HTTP
 
 Comment est formée une requête HTTP ?
 > Première ligne, Headers, CRLF, Body (à vérifier)
@@ -78,21 +78,41 @@ Quelle méthode permet de s'assurer qu'une `Response` respecte bien la spécific
 Elle respecte la RFC 2616  
 Concrêtement, elle regarde le status code de la réponse et la change en conséquence. 
 
+Que fait `$response->isNotModified()` ?
+> Determines if the Response validators (ETag, Last-Modified) match a conditional value specified in the Request.  
+If the Response is not modified, it sets the status code to 304 and removes the actual content by calling the setNotModified() method.
 
-
-
-
+Les différentes classes Response:
+> Response  
+> JsonResponse  
+> BinaryFileResponse  
+> StreamedResponse  
+> RedirectResponse  
 
 
 ### Méthodes HTTP
-Quelles méthodes HTTP sont indépotentes ?
+Quelles sont les méthodes HTTP considérées comme "safe" ?
+> GET, HEAD, OPTIONS & TRACE car elles ne changent pas l'état de la resource (read-only)
+
+Quelles méthodes HTTP sont idempotentes (idempotent) ?
+> PUT, DELETE et les méthodes "safe" (GET, HEAD, OPTIONS & TRACE)
+
+Quelles sont les méthodes HTTP cacheable ?
+> GET, HEAD et POST (https://tools.ietf.org/html/rfc7231#section-4.2.3)
 
 ### Cookies
-Comment setter un cokkie ?
-> $response->headers->setCookie(new Cookie('foo', 'bar'));
+Comment setter un cookie ?
+> `$response->headers->setCookie(new Cookie('foo', 'bar'));`
 
 ### Cache HTTP
+Quels sont les différents types de cache ?
+> Browser  
+> Proxy  
+> Gateway  
 
 ### Négociation de contenu
 
 ### Détection de la langue du client
+Quelle est la différence entre `getPreferredLanguage(array $locales = null)` et `getLanguages()` ?
+> getLanguages va lire le header `Accept-Language` et renvoyer un tableau de langues formatés  
+> getPreferredLanguage va lire getLanguages en fonction d'un locale donnée et retourne un tableau de locale (sans les _XX, ex: `[fr, en]`)

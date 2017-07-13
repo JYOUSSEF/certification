@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\VarDumper\VarDumper;
 
 class DefaultController extends Controller
 {
@@ -14,6 +15,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        die(VarDumper::dump($request->getLanguages()));
+
         return new Response('<html><body>ok</body></html>');
     }
 
