@@ -133,7 +133,7 @@ http://symfony.com/doc/current/components/http_kernel/introduction.html#componen
 
 Exception handling
 ----------
-Quel événement HttpKernel dispatch-t-il lorsque'une exception est levé ?
+Quel événement HttpKernel dispatch-t-il lorsqu'une exception est levée ?
 > kernel.exception
 
 Si un listener appel `setResponse`  sur le `GetResponseForExceptionEvent`, que se passe-t-il ?
@@ -143,13 +143,13 @@ Event dispatcher and kernel events
 ----------
 > Kernel Events ?
 
--kernel.request (GetResponseEvent)  
--kernel.controller (FilterControllerEvent)  
--kernel.view (GetResponseForControllerResultEvent)  
--kernel.response (FilterResponseEvent)  
--kernel.finish_request (FinishRequestEvent)  
--kernel.terminate (PostResponseEvent)  
--kernel.exception (GetResponseForExceptionEvent)  
+- kernel.request (GetResponseEvent)  
+- kernel.controller (FilterControllerEvent)  
+- kernel.view (GetResponseForControllerResultEvent)  
+- kernel.response (FilterResponseEvent)  
+- kernel.finish_request (FinishRequestEvent)  
+- kernel.terminate (PostResponseEvent)  
+- kernel.exception (GetResponseForExceptionEvent)  
 
 http://symfony.com/doc/current/reference/events.html#kernel-request
 
@@ -166,20 +166,23 @@ Quand sera-t-elle release ?
 > 11/2017
 
 Quelle est la durée de maintenance des LTS ?
-> 36 mois
+> 36 mois pour les bug fixes et 4 ans pour les security issue fixes
 
 Quelle est la durée de maintenance des version mineurs ?
-> 8 mois
+> 8 mois pour les bug fixes et 14 mois (+6) pour les security issue fixes
 
 Quelle est la durée d'un feature freeze ?
 > 2 mois
 
 Backward compatibility promise
 ----------
+Seules les version majeurs peuvent introduire des BC break.  
+`@internal` documented code peuvent break  
 
 Deprecations best practices
 ----------
-
+Quel package Composer permet de lister toutes les dépéciations en ligne de commande ?
+> `symfony/phpunit-bridge`
 
 
 ==============================
