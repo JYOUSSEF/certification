@@ -15,7 +15,7 @@
 - try/catch `finally` ajouté
 - Résolution des noms de classes avec `::class`
 - Ajout de l'extension OPCache
-- DateTimeImmutable
+- DateTimeImmutable 
 
 ### 5.6
 - opération sur les constantes

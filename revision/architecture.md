@@ -3,19 +3,27 @@
 Symfony Standard Edition
 ----------
 Combien y a-t-il de bundles ?
-> 11
+> 12
 
-- FrameworkBundle - The core Symfony framework bundle
-- SensioFrameworkExtraBundle - Adds several enhancements, including template and routing annotation capability
-- DoctrineBundle - Adds support for the Doctrine ORM
-- TwigBundle - Adds support for the Twig templating engine
-- SecurityBundle - Adds security by integrating Symfony's security component
-- SwiftmailerBundle - Adds support for Swiftmailer, a library for sending emails
-- MonologBundle - Adds support for Monolog, a logging library
-- WebProfilerBundle (in dev/test env) - Adds profiling functionality and the web debug toolbar
-- SensioDistributionBundle (in dev/test env) - Adds functionality for configuring and working with Symfony distributions
-- SensioGeneratorBundle (in dev/test env) - Adds code generation capabilities
+Symfony:
 - DebugBundle (in dev/test env) - Adds Debug and VarDumper component integration
+- FrameworkBundle - The core Symfony framework bundle
+- SecurityBundle - Adds security by integrating Symfony's security component
+- TwigBundle - Adds support for the Twig templating engine
+
+symfony/symfony:
+- AsseticBundle
+- MonologBundle - Adds support for Monolog, a logging library
+- SwiftmailerBundle - Adds support for Swiftmailer, a library for sending emails
+- WebProfilerBundle (in dev/test env) - Adds profiling functionality and the web debug toolbar
+
+Sensio:
+- SensioDistributionBundle (in dev/test env) - Adds functionality for configuring and working with Symfony distributions
+- SensioFrameworkExtraBundle - Adds several enhancements, including template and routing annotation capability
+- SensioGeneratorBundle (in dev/test env) - Adds code generation capabilities
+
+Doctrine:
+- DoctrineBundle - Adds support for the Doctrine ORM
 
 License
 ----------
@@ -78,8 +86,11 @@ Quels sont les 4 bundles qui ne sont pas chargés en environnement de prod ?
 À quoi sert SensioGeneratorBundle ?
 > Il étend la liste des commandes de Symfony en ajoutant celles générant:
 - un bundle
-- des classes de formulaires
-- des controller de CRUD à partir d'un schéma Doctrine 2.
+- une commande
+- un contrôleur
+- de contrôleur de CRUD à partir d'un schéma Doctrine 2.
+- une entité Doctrine
+- une classe de formulaire
 
 Que faut-il faire pour mettre en place l'héritage d'un bundle dans un autre bundle ?
 - Définir la méthode getParent() dans notre Bundle
@@ -155,7 +166,6 @@ http://symfony.com/doc/current/reference/events.html#kernel-request
 
 Official best practices
 ----------
-c.f university.yml file
 
 Release management
 ----------

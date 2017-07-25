@@ -8,6 +8,21 @@
 
 ## Options et arguments
 
+Comment peut-on définir un argument pouvant contenir plusieurs valeurs ?
+> `InputArgument::IS_ARRAY`, et uniquement en dernier argument
+
+Comment peut-on le rendre obligatoire ?
+```php
+<?php
+$this
+    //...
+    ->addArgument(
+        'names',
+        InputArgument::IS_ARRAY | InputArgument::REQUIRED,
+        'Who do you want to greet (separate multiple names with a space)?'
+    );
+```
+
 ## Entrée et sortie de la console
 
 ## Aides de console (« helpers »)
