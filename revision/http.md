@@ -92,7 +92,7 @@ Les différentes classes Response:
 
 ### Méthodes HTTP
 Quelles sont les méthodes HTTP considérées comme "safe" ?
-> GET, HEAD, OPTIONS & TRACE car elles ne changent pas l'état de la resource (read-only)
+> GET, OPTIONS, TRACE, HEAD car elles ne changent pas l'état de la resource (read-only)
 
 Quelles méthodes HTTP sont idempotentes (idempotent) ?
 > PUT, DELETE et les méthodes "safe" (GET, HEAD, OPTIONS & TRACE)
