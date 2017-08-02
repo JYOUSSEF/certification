@@ -8,7 +8,7 @@
 Quel est la principale utilité de la classe Controller de base ?
 > Fournir des méthodes de raccourci pour les classes enfants (des helpers) et donne accès au `container`.
 
-Quel est le namespace du contrôleur de base ?
+Quel est le namespace du contrôleur de base (Controller) ?
 > Symfony\Bundle\FrameworkBundle\Controller
 
 Quelle interface implémente-t-il ?
@@ -24,6 +24,12 @@ Quelle est la différence entre `render()` et `renderView()` ?
 ## The request
 Quel est le namespace d'une `Request`?
 > `Symfony\Component\HttpFoundation`
+
+Quels paramètres peut-on récupérer directement dans la signature d'une action, à part la Request ?
+- `_controller`
+- `_format`
+- `_locale`
+> https://symfony.com/doc/3.0/routing.html#special-routing-parameters  
 
 ## The response
 
