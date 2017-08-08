@@ -1,6 +1,8 @@
 # Routing
 
-## Configuration (YAML, XML, PHP & annotations)
+## Part 1
+
+### Configuration (YAML, XML, PHP & annotations)
 Comment ajouter une Route à une RouteCollection ?
 > $routeCollection->add($name, Route $route);
 
@@ -16,7 +18,14 @@ Comment forcer l'utilisation de HTTP ou HTTPS ?
 Est-ce qu'on peut définir une route par défaut pour une classe de contrôleur ?
 > Oui, avec l'annotation `@Route`.
 
-## Restrict URL parameters
+Comment importer des routes dans Symfony ?
+```yaml
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+```
+
+### Restrict URL parameters
 Quel paramètre permet de restreindre l'accès à une route définie en annotation ?
 > `Method`
 
@@ -26,14 +35,14 @@ Par défault, quelle méthode est autorisée ?
 Comment autoriser "/" dans une URL ?
 > `requirements={"username"=".+"}` (par défault : `[^/]+`)
 
-## Set default values to URL parameters
+### Set default values to URL parameters
 Comment ?
-> En définissat une valeur données dans `defaults`.
+> En définissant une valeur donnée dans `defaults`.
 
-## Generate URL parameters
+### Generate URL parameters
 Comment générer une URL absolue ?
 > Depuis un contrôleur : `$this->generateUrl('blog_show', array('slug' => 'my-blog-post'), UrlGeneratorInterface::ABSOLUTE_URL);`  
-> Avec le service `router` : `generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)`
+> Avec le service `router` : `$router->generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)`
 
 Comment faire la même chose mais pour la Console ?
 > En définissant le contexte de façon globale :
@@ -51,8 +60,8 @@ $context->setScheme('https');
 $context->setBaseUrl('my/path');
 ```
 
-## Trigger redirects
-Peut-on définir des redirections dans la config du routing, en YAML?
+### Trigger redirects
+Comment peut-on définir des redirections dans la config du routing, en YAML?
 > Oui:
 ```yaml
 # app/config/routing.yml
@@ -70,31 +79,34 @@ redirect_route:
         route: index
 ```
 
-## Special internal routing attributes
+### Special internal routing attributes
 Quels sont les 3 paramètres spéciaux du routing ?
 > `_controller` (fqcn AppBundle\Controller\DefaultController::indexAction ou logical name AppBundle:Default:index)  
 > `_format` (change le Content-Type de la Request)  
 > `_locale`  
 
 Que fait concrètement `_format`?
-> Il set le header `Content-Type`.
+> Il set le header `Content-Type` de la Request.
 
-## Domain name matching
+
+## Part 2
+
+### Domain name matching
 Comment faire matcher une route avec une nom de domaine ?
 > Avec l'option `host`.
 
-## Conditional request matching
-À quoi set l'option `condition` ?
+### Conditional request matching
+À quoi sert l'option `condition` ?
 > À valider si un user peut accéder ou non à une ressource. On peut utiliser l'Expression Language pour ça.
 
-## HTTP methods matching
-Si la méthode ne match pas, quelle type de Response est renvoyée ?
+### HTTP methods matching
+Si la méthode HTTP ne match pas, quelle type de Response est renvoyée ?
 > 405 Method Not Allowed
 
-## User's locale guessing
+### User's locale guessing
 Comment définir la locale par défaut pour les cas les plus spécifiques ?
 > Via un kernel.request listener: `$request->setLocale(...)`
 
-## Router debugging
+### Router debugging
 Que fait la commande `debug:container router` ?
 > Elle affiche les infos du service `router` :o)

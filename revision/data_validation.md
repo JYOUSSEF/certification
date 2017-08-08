@@ -32,6 +32,7 @@ Contraintes basiques ([doc](https://symfony.com/doc/current/validation.html#supp
 
 Comment peut-on activer la validation sur un formulaire ?
 ```php
+<?php
 Forms::createFormFactoryBuilder()
     ->addExtension(new ValidatorExtension(Validation::createValidator()))
     ->getFormFactory()
