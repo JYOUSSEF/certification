@@ -30,7 +30,7 @@ Quelle est la bonne pratique pour organiser l'héritage de template ?
 
 
 ### Global variables
-Quelles sont les 5 variables globales par défaut ?
+Quelles sont les 5 variables globales exposées par Symfony ?
 - app.user (UserInterface|null)
 - app.request (Request object)
 - app.debug (true|false)
@@ -63,6 +63,7 @@ Que fait la fonction `cycle(array, position)` ?
     {{ cycle(['odd', 'even'], loop.index0) }}
 {% endfor %}
 ```
+Ça évite de faire un modulo.        
 
 Comment afficher la valeur d'une constante PHP dans Twig ?
 ```twig
@@ -71,7 +72,7 @@ Comment afficher la valeur d'une constante PHP dans Twig ?
 
 ### Template includes
 À quoi sert l'option `ignore_missing` set à `true` dans la fonction `include()` ?
-> À éviter d'avoir une `Twig_Loader_Error`. On a une chaine de caractère vide à la place.  
+> Evite d'avoir une `Twig_Loader_Error`. On a une chaine de caractère vide à la place.  
 
 Que se passe-t-il si on passe un tableau de template à la fonction `include()` ?
 ```twig
@@ -105,6 +106,11 @@ Que fait l'option `sandboxed` set à `true` lors d'un `include` ?
 ### Debugging variables
 
 
+```yaml
+twig:
+    strict_variables: "%kernel.debug%"
+```
+
 
 # Notes
 
@@ -127,3 +133,8 @@ Pour un include, il vaut mieux utiliser la fonction `include()` plutôt que le t
 
 {{ path() }} : génére un chemin, ex: `/blog`  
 {{ url() }} : génère une URL absolue, ex: `http://domain.com/blog`  
+
+Supprimer les espaces :
+- trim
+- {% spaceless %} ... {% endspaceless %}
+- {{- ... -}}
