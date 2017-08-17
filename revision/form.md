@@ -6,8 +6,8 @@
 Comment créer un formulaire depuis un controller, sans FormType ?
 ```php
 <?php
-$this->createFormBuilder()
-    ->add('...')
+$form = $this->createFormBuilder()
+    ->add('task', TextType::class)
     ->getForm()
 ;
 ```
@@ -22,10 +22,10 @@ Quel service est utilisé pour créer un form ou un formBuilder ?
 > form.factory
 
 ### Forms handling
-Dans un controller, comment gérer la soumission d'un form ?
+Dans un controller, comment gérer la soumission d'un Form ?
 > `$form->handleRequest($request)`  
 
-À quoi sert le 2ème argument de la méthod `submit` d'un Form ?
+À quoi sert le 2ème argument de la méthod `submit($submittedData, $clearMissing = true)` d'un Form ?
 > `$clearMissing` est à `true` par défault.   
 > En le passant à `false`, Si il y a des valeurs manquantes, cela évite qu'elles soient set à `null`  
 > Ex: lors d'un PATCH  
