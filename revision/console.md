@@ -28,6 +28,10 @@ $this
 ## Aides de console (« helpers »)
 
 ## Événements internes de la console
+Quels sont les events dispatchés par une Application ?
+- `Symfony\Component\Console\ConsoleEvents\COMMAND`
+- `Symfony\Component\Console\ConsoleEvents\TERMINATE`
+- `Symfony\Component\Console\ConsoleEvents\EXCEPTION`
 
 ## Niveaux de verbosité de la sortie
 Quels sont les différents niveaux de verbosité de la console ?
