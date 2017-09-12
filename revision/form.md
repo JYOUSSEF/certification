@@ -31,7 +31,7 @@ Dans un controller, comment gérer la soumission d'un Form ?
 > Ex: lors d'un PATCH  
 
 ### Form types
-Que peut-on faire en utilise le paramètre **prototype_name** du formType `Symfony\Component\Form\Extension\Core\Type\CollectionType` ?
+Que peut-on faire en utilisant le paramètre **prototype_name** du formType `Symfony\Component\Form\Extension\Core\Type\CollectionType` ?
 > When one has a prototype embedding other prototypes, it allows to replace each one with a specific value.   
 If you have several collections in your form, or worse, nested collections you may want to change the placeholder so that unrelated placeholders are not replaced with the same value.  
 
@@ -89,7 +89,7 @@ Comment désactiver la validation d'un formulaire ?
 > L'event listener ajouté doit avoir une priorité supérieur au ` ValidationListener`.
 
 (à vérifier) Pour ajouter/supprimer un champ de formulaire dynamiquement, quel event doit-on écouter ?
-> `FormEvent::PRE_SET_DATA`
+> `FormEvent::PRE_SET_DATA`  
 
 À quel genre de données a-t-on accès lors du `PRE_SET_DATA` ?
 > Model data
@@ -119,3 +119,7 @@ Comment désactiver la validation d'un formulaire ?
     - label
     - errors
     - widget
+
+-> faire de l'héritage => getParent
+-> paramètre 'invalid_message' d'un formType
+-> différence isSubmitted et isValid
