@@ -8,3 +8,6 @@ services:
 AppBundle\SomeNonSharedService:
 shared: false
 ```
+
+Quel type d'objet retourne la méthode `request()` de la classe `Symfony\Component\BrowserKit\Client` dans un test fonctionnel ?
+> `Symfony\Component\DomCrawler\Crawler`
