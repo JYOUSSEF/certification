@@ -9,7 +9,7 @@ Quels types de propriétés et de méthodes peuvent être validées ?
 > public, protected & private properties and "getter" methods (get, is, has)
 
 ## Built-in validation constraints
-Quel type d'objet retourne la méthode `validator` du service `validator` ?
+Quel type d'objet retourne la méthode `validate` du service `validator` ?
 > `ConstraintViolationList` qui contient des objets `ConstraintViolation`
 
 Comment activer, dans la configuration, le composant Validator ?
