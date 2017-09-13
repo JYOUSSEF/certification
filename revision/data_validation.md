@@ -12,6 +12,9 @@ Quels types de propriétés et de méthodes peuvent être validées ?
 Quel type d'objet retourne la méthode `validate` du service `validator` ?
 > `ConstraintViolationList` qui contient des objets `ConstraintViolation`
 
+Que retourne la méthode `validate` du service `validator` si aucune violation n'a été détectée ?
+> Une chaîne de caractère vide.
+
 Comment activer, dans la configuration, le composant Validator ?
 ```yaml
 # app/config/config.yml
@@ -44,15 +47,18 @@ Peut-on créer nos propres contraintes de validation ?
 
 Comment créer un custom validator ?
 > Créer la classe de Constraint qui étend `Symfony\Component\Validator\Constraint`  
-> Utiliser `@Annotation` sur la classe  
-> Créer la classe du validator, qui se termine par `Validator`. Ex : "MyConstraintValidator"  
-> Y ajouter la méthode `validate()` (dans cette méthod on ajoute des violations au `context` du  validator): 
+> Utiliser `@Annotation` sur la classe, si besoin  
+> Créer la classe du validator, qui se termine par `Validator`. Ex : "MyConstraintValidator" et qui étend `Symfony\Component\Validator\ConstraintValidator`  
+> Y ajouter la méthode `validate()` (dans cette méthode on ajoute des violations au `context` du  validator): 
 ```php
 $this->context->buildViolation()->addViolation();
 ```
 
 Comment l'ajouter en tant que service ?
 > avec le tag : `validator.constraint_validator`
+
+Que fait la contrainte `CardScheme` ?
+> Elle vérifie qu'un numéro de carte est valide pour un type de carte bancaire donné.
 
 ## Validation scopes
 
@@ -61,7 +67,8 @@ Comment l'ajouter en tant que service ?
 
 
 ## Group sequence
-
+Que se passe-t-il si on indique le groupe `Default` dans une `GroupSequence` ?
+> Il y a un erreur de récursion infinie car le group `Default` référence désormais le `GroupSequence`.
 
 ## Custom callback validators
 
