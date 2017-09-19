@@ -124,7 +124,8 @@ Quels sont les 5 bridges vers des librairies externes inclus dans Symfony ?
 Configuration
 ----------
 Quels sont les formats de configuration supportés par Symfony par défaut ?
-> xml, yml, php, ini et annotation
+> xml, yml, php, ini
+> Annotation can only be used for Controllers this is provided by SensioExtraFrameworkBundle https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html#annotations-for-controllers
 
 Parmi ces formats, lequel est le plus performant ?
 > aucun, ils sont tous compilés en PHP avant l'exécution de l'application
