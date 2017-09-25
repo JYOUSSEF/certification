@@ -111,7 +111,7 @@ Comment désactiver la validation d'un formulaire ?
 
 # Notes:
 - Connaitre tous les formType de Symfony  
-- Connaitre toures les contraintes de validation de Symfony  
+- Connaitre toutes les contraintes de validation de Symfony  
 - form_start
 - form_end
 - form_errors
