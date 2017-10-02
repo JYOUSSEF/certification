@@ -67,3 +67,21 @@ Comment activer ESI ?
 
 Une ESI Request est une Master ou un Sub Request ?
 > Master Request
+
+
+---
+
+> gateway, surrogate, reverse proxy cahce
+
+Expiration:
+Pas de requête HTTP envoyée.
+- Expires
+- Cache-Control
+    - max-age
+    - s-maxage
+    - private / public
+
+Validation:
+200 OK ou 304 Not Modified
+    - ETag (If-None-Match)
+    - Last-Modified (If-Modified-Since)
