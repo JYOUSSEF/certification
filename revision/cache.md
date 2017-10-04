@@ -16,7 +16,7 @@ Comment peut-on modifier des options du cache ?
 > AppCache::getOptions()
 
 Quelles sont les méthodes HTTP cachables ?
-> GET & HEAD
+> GET, OPTIONS, TRACE & HEAD
 
 Comment activer la surcharge de méthode ?
 > framework.http_method_override: true
@@ -38,20 +38,20 @@ Que fait Response::setNotModified() ?
 
 
 ## Expiration (Expires, Cache-Control)
-Cache-Control
+> Cache-Control
     max-age : indique la quantité de temps maximale où la représentation sera considérée fraîche  
     s-max-age : similaire à max-age, sauf qu'elle ne s'applique qu'aux caches partagés (par exemple, un mandataire)  
     public : marque les réponses authentifiées comme cachables  
     no-cache : force à chaque fois les caches à soumettre la requête au serveur original  
     must-revalidate : en indiquant cette en-tête, vous dites au cache que vous voulez un respect strict de vos règles  
-Expires 
+> Expires 
     ex : Fri, 30 Oct 1998 14:19:41 GMT  
     N'est plus top utilisé car limité  
 
 ## Validation (ETag, Last-Modified)
-Last-Modified 
+> Last-Modified 
     header dans la Request = If-Modified-Since  
-ETag  
+> ETag  
     header dans la Request = If-None-Match  
 -> 304 Not Modified (sans générer le body)  
 
@@ -71,7 +71,7 @@ Une ESI Request est une Master ou un Sub Request ?
 
 ---
 
-> gateway, surrogate, reverse proxy cahce
+> gateway, surrogate, reverse proxy cache
 
 Expiration:
 Pas de requête HTTP envoyée.
