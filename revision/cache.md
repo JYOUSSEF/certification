@@ -16,7 +16,7 @@ Comment peut-on modifier des options du cache ?
 > AppCache::getOptions()
 
 Quelles sont les méthodes HTTP cachables ?
-> GET, OPTIONS, TRACE & HEAD
+> GET, HEAD, POST
 
 Comment activer la surcharge de méthode ?
 > framework.http_method_override: true
